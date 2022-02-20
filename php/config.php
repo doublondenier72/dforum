@@ -15,3 +15,4 @@ $websitename = "DForum";
 $servername = "localhost";
 $username = "root";
 $dbname = "dforum";
+$password = "vanille1";

@@ -6,6 +6,11 @@ if(($configurate) == false ){
     header("Location: install.php");
 }
 
+
+$title = $bdd->query('SELECT * FROM config WHERE name = "title" ');
+$title = $title->fetchAll(); 
+
+
 ?>
 <html lang="fr">
 <head>
@@ -17,6 +22,7 @@ if(($configurate) == false ){
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
@@ -43,13 +49,10 @@ if(($configurate) == false ){
                </div>
              </li>
            </ul>
-           <form class="form-inline my-2 my-lg-0">
-             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-           </form>
+           <a href="" class="btn btn-outline-primary mr-2">Sign Up</a>
+           <a href="" class="btn btn-primary">Login</a>
          </div>
         </div>
-      
     </nav>
 
     <div class="container">
@@ -59,7 +62,7 @@ if(($configurate) == false ){
 
                     <div class="ibox-content m-b-sm border-bottom">
                         <div class="p-xs">
-                            <h2>Welcome to our first forum</h2>
+                            <h2><?= $title['name'] ?></h2>
                             <span>logged in you on the admin dahboard for change this message.</span>
                         </div>
                     </div>
@@ -73,11 +76,11 @@ if(($configurate) == false ){
                             <h3>General subjects</h3>
                         </div>
 
-                        <div class="forum-item active">
+                        <div class="forum-item">
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="forum-icon">
-                                        <i class="fa fa-shield"></i>
+                                        <i class="fa fa-globe"></i>
                                     </div>
                                     <a href="forum_post.html" class="forum-item-title">General Discussion</a>
                                     <div class="forum-sub-title">Talk about sports, entertainment, music, movies, your favorite color, talk about enything.</div>
@@ -101,111 +104,6 @@ if(($configurate) == false ){
                                 <div class="col-md-1 forum-info">
                                     <span class="views-number">
                                         140
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forum-item">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-bolt"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">Introductions</a>
-                                    <div class="forum-sub-title">New to the community? Please stop by, say hi and tell us a bit about yourself. </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        890
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        120
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        154
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forum-item active">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-calendar"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">Announcements</a>
-                                    <div class="forum-sub-title">This forum features announcements from the community staff. If there is a new post in this forum, please check it out. </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        680
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        124
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        61
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forum-item">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">Staff Discussion</a>
-                                    <div class="forum-sub-title">This forum is for private, staff member only discussions, usually pertaining to the community itself. </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        1450
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        652
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        572
                                     </span>
                                     <div>
                                         <small>Posts</small>
@@ -256,118 +154,59 @@ if(($configurate) == false ){
                                 </div>
                             </div>
                         </div>
-                        <div class="forum-item">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-bomb"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">There are many variations of passages</a>
-                                    <div class="forum-sub-title"> If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the . </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        1766
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        321
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        42
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forum-item">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-bookmark"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">The standard chunk of Lorem Ipsum</a>
-                                    <div class="forum-sub-title">Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        765
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        90
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        11
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forum-item">
-                            <div class="row">
-                                <div class="col-md-9">
-                                    <div class="forum-icon">
-                                        <i class="fa fa-ambulance"></i>
-                                    </div>
-                                    <a href="forum_post.html" class="forum-item-title">Lorem Ipsum, you need to be sure there</a>
-                                    <div class="forum-sub-title">Internet tend to repeat predefined chunks as necessary, making this the</div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        2550
-                                    </span>
-                                    <div>
-                                        <small>Views</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        122
-                                    </span>
-                                    <div>
-                                        <small>Topics</small>
-                                    </div>
-                                </div>
-                                <div class="col-md-1 forum-info">
-                                    <span class="views-number">
-                                        92
-                                    </span>
-                                    <div>
-                                        <small>Posts</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/bootstrap.js"></script>
-    <script src="js/jquery.js"></script>
+    <footer class="text-center text-lg-start bg-light text-muted mt-5">
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <div class="container mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h4 class="text-uppercase fw-bold mb-4">
+                <img src="img/defaultfavicon.png" class="mb-1" alt="" width="40px"><?= $websitename ?>
+              </h4>
+              <p>
+                Create your environement with the DForum CMS
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Topics
+              </h6>
+              <p>
+                <a href="" class="text-reset">Popular topics</a>
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Useful links
+              </h6>
+              <p>
+                <a href="" class="text-reset">Pricing</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Contact
+              </h6>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                info@example.com
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2022 - 2023 <?= $websitename ?> | propulsé par DForum
+      </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>
 </html>
