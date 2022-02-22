@@ -7,8 +7,9 @@ if(($configurate) == false ){
 }
 
 
-$title = $bdd->query('SELECT * FROM config WHERE name = "title" ');
-$title = $title->fetchAll(); 
+$title = $bdd->query('SELECT title FROM config WHERE name = "title"');
+$title = $title->fetch(); 
+
 
 
 ?>
@@ -62,7 +63,7 @@ $title = $title->fetchAll();
 
                     <div class="ibox-content m-b-sm border-bottom">
                         <div class="p-xs">
-                            <h2><?= $title['name'] ?></h2>
+                            <h2><?= $title ?></h2>
                             <span>logged in you on the admin dahboard for change this message.</span>
                         </div>
                     </div>
